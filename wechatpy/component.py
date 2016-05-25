@@ -145,7 +145,7 @@ class BaseWeChatComponent(object):
             errmsg = result['errmsg']
             if errcode == 42001:
                 # access_token expired, fetch a new one and retry request
-                self.fetch_component_access_token()
+                self.fetch_access_token()
                 kwargs['params']['component_access_token'] = self.session.get(
                     'component_access_token'
                 )
